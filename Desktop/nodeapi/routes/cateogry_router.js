@@ -1,9 +1,9 @@
-var student=require('../bin/model/student_model');
+var cateogry=require('../bin/model/cateogry_model');
 var express=require('express');
 var router=express.Router();
-router.get('/:rno?',function(req,res,next){
-    if(req.params.rno){
-        student.getStudentById(req.params.rno,function(err,rows){
+router.get('/:cat_id?',function(req,res,next){
+    if(req.params.cat_id){
+        cateogry.getCateogryById(req.params.cat_id,function(err,rows){
             if(err)
             {
                 res.json(err)
@@ -14,7 +14,7 @@ router.get('/:rno?',function(req,res,next){
         })
     }
     else{
-        student.getAllTask(function(err,rows)
+    cateogry.getAllTask(function(err,rows)
         {
             if(err)
             {
@@ -22,16 +22,13 @@ router.get('/:rno?',function(req,res,next){
             }
             else{
                 res.json(rows)
-            }  
-    });
-
-    
-        }
+            }
+        });
+    }
 
 });
-
 router.post('/',function(req,res,next){
-    student.addTask(req.body,function(err,rows){
+    cateogry.addTask(req.body,function(err,rows){
         if(err)
         {
             res.json(err)
@@ -41,8 +38,8 @@ router.post('/',function(req,res,next){
         }
     });
 });
-router.delete('/:rno',function(req,res,next){
-    student.deleteTask(req.params.rno,function(err,rows){
+router.delete('/:cat_id',function(req,res,next){
+    cateogry.deleteTask(req.params.cat_id,function(err,rows){
         if(err)
         {
             res.json(err)
@@ -52,8 +49,8 @@ router.delete('/:rno',function(req,res,next){
         }
     });
 });
-router.put('/:rno',function(req,res,next){
-    student.updateTask(req.body,req.params.rno,function(err,rows){
+router.put('/:cat_id',function(req,res,next){
+    cateogry.updateTask(req.body,req.params.cat_id,function(err,rows){
     if(err)
     {
         res.json(err)

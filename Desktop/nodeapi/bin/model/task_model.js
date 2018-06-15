@@ -1,10 +1,12 @@
 var db=require('../dbconnection');
 var task={
-    getAllTask:function(callback){
-        return db.query('select * from task',callback);
+    getTaskById:function(id,callback){
+        return db.query('select * from task where id=?',[id],callback);
     
 },
-
+getAllTask:function(callback){
+    return db.query('select * from task',callback)
+},
 
 
 addTask:function(item,callback){

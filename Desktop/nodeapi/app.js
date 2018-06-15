@@ -9,6 +9,11 @@ var usersRouter = require('./routes/users');
 var task=require('./routes/task_router');
 var product=require('./routes/product_router');
 var student=require('./routes/student_router');
+var cateogry=require('./routes/cateogry_router');
+var user=require('./routes/login_router');
+var signup=require('./routes/signup_router');
+var viewprofile=require('./routes/viewprofile_router');
+var editprofile=require('./routes/editprofile_router');
 var app = express();
 
 // view engine setup
@@ -26,6 +31,11 @@ app.use('/users', usersRouter);
 app.use('/todo',task);
 app.use('/product',product);
 app.use('/student',student);
+app.use('/cateogry',cateogry);
+app.use('/user',user);
+app.use('/signup',signup);
+app.use('/viewprofile',viewprofile);
+app.use('/editprofile',editprofile);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
