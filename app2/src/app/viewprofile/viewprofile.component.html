@@ -1,0 +1,38 @@
+<div class="container" align="center">
+
+  <div class="form-group">
+    <h3>EMAIL_ID</h3><div class="form-control">
+      <input type="email" [(ngModel)]="email_id" disabled>
+    </div>
+  </div>
+  <div class="form-group">
+    <h3>PASSWORD</h3><div class="form-control">
+      <input type="password" [(ngModel)]="password" disabled>
+    </div>
+    <div class="form-group">
+      <h3>USERNAME:</h3><div class="form-control">
+        <input type="text" [(ngModel)]="u_name" disabled>
+      </div>
+      <div class="form-group">
+        <h3>MOBILE_NO:</h3><div class="form-control">
+          <input type="text" [(ngModel)]="mob_no" disabled>
+        </div>
+        <div class="form-group">
+          <h3>CITY</h3><div class="form-control">
+              <select [(ngModel)]="city" disabled>
+                <option *ngFor="let item of arr1">{{item}}</option>
+                </select>
+          </div>
+          <div class="form-group">
+            <h3>GENDER</h3><div class="form-control">
+              <input type="radio" name="r1" value="male" [(ngModel)]="gender" disabled>male
+              <input type="radio" name="r1" value="female" [(ngModel)]="gender" disabled>female
+            </div>
+            <div class="form-group">
+              <h3>ADDRESS</h3><div class="form-control">
+                <input type="text" [(ngModel)]="address" disabled>
+              </div>
+  </div>
+<br>
+<button (click)="onEdit()">EDIT PROFILE</button>
+

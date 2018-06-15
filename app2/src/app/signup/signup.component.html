@@ -1,0 +1,40 @@
+<div class="container" align="center">
+
+  <div class="form-group">
+    <h3>EMAIL_ID</h3><div class="form-control">
+      <input type="email" [(ngModel)]="email_id">
+    </div>
+  </div>
+  <div class="form-group">
+    <h3>PASSWORD</h3><div class="form-control">
+      <input type="password" [(ngModel)]="password">
+    </div>
+    <div class="form-group">
+      <h3>USERNAME:</h3><div class="form-control">
+        <input type="text" [(ngModel)]="u_name">
+      </div>
+      <div class="form-group">
+        <h3>MOBILE_NO:</h3><div class="form-control">
+          <input type="text" [(ngModel)]="mob_no">
+        </div>
+        <div class="form-group">
+          <h3>CITY</h3><div class="form-control">
+              <select [(ngModel)]="city">
+                <option *ngFor="let item of arr1">{{item}}</option>
+                </select>
+          </div>
+          <div class="form-group">
+            <h3>GENDER</h3><div class="form-control">
+              <input type="radio" name="r1" value="male" [(ngModel)]="gender">male
+              <input type="radio" name="r1" value="female" [(ngModel)]="gender">female
+            </div>
+            <div class="form-group">
+              <h3>ADDRESS</h3><div class="form-control">
+                <input type="text" [(ngModel)]="address">
+              </div>
+  </div>
+  <button (click)="onAdd()">ADD</button>
+  <br>
+  <br>
+  <br>
+  <a (click)="onLogin()">ALREADY EXISTS</a>

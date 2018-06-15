@@ -1,0 +1,30 @@
+<div class="container" align="center">
+
+<div class="form-group">
+  <h3>EMAIL_ID</h3><div class="form-control">
+    <input type="email" [(ngModel)]="email_id">
+  </div>
+</div>
+<div class="form-group">
+  <h3>PASSWORD</h3><div class="form-control">
+    <input type="password" [(ngModel)]="password">
+  </div>
+</div>
+<br>
+
+<div class="form-group">
+  <button (click)="onLogin()">login</button>
+  <br>
+<br>
+<br>
+<!-- <div class="form-group">
+  <button (click)="onSignup()">SIGNUP</button>
+  <br>
+<br>
+<br> -->
+  <a (click)="onSignup()">NEW USER?</a>&nbsp;&nbsp;
+  <a (click)="onPass()">FORGOT PASSWORD?</a>&nbsp;&nbsp;
+  <a (click)="onChange()">CHANGE PASSWORD?</a>
+</div>
+</div>
+
