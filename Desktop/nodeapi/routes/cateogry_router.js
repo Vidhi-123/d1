@@ -8,7 +8,8 @@ router.get('/:cat_id?',function(req,res,next){
             {
                 res.json(err)
             }
-            else{
+            else
+            {
                 res.json(rows)
             }
         })

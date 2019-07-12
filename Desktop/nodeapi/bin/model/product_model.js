@@ -9,8 +9,8 @@ var product={
 
     
     
-addTask:function(item,callback){
-    return db.query("insert into product values (?,?,?,?,?,?)",[item.id,item.name,item.price,item.image,item.mfg,item.soh],callback)
+addTask:function(item,filename,callback){
+    return db.query("insert into product values (?,?,?,?,?,?)",[item.id,item.name,item.price,filename,item.mfg,item.soh],callback)
 },
 deleteTask:function(id,callback){
     return db.query("delete from product where id=?",[id],callback);

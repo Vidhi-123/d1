@@ -14,6 +14,12 @@ var user=require('./routes/login_router');
 var signup=require('./routes/signup_router');
 var viewprofile=require('./routes/viewprofile_router');
 var editprofile=require('./routes/editprofile_router');
+var product1=require('./routes/product_tbl_router');
+var product2=require('./routes/cateogry_tbl_router');
+var viewproduct=require('./routes/viewproduct_router');
+var similar=require('./routes/similar_routes');
+var product3=require('./routes/pr_router');
+var todo=require('./routes/todo_router');
 var app = express();
 
 // view engine setup
@@ -28,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/todo',task);
+app.use('/task',task);
 app.use('/product',product);
 app.use('/student',student);
 app.use('/cateogry',cateogry);
@@ -36,6 +42,12 @@ app.use('/user',user);
 app.use('/signup',signup);
 app.use('/viewprofile',viewprofile);
 app.use('/editprofile',editprofile);
+app.use('/product1',product1);
+app.use('/product2',product2);
+app.use('/product3',product3)
+app.use('/viewproduct',viewproduct);
+app.use('/similar',similar);
+app.use('/todo',todo);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

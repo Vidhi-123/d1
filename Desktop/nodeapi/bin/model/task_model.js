@@ -17,6 +17,16 @@ deleteTask:function(id,callback){
 },
 updateTask:function(item,id,callback){
     return db.query("update task set title=?,status=? where id=?",[item.title,item.status,id],callback);
+},
+deleteAll:function(item,callback){
+    var delarr=[];
+    console.log(item);
+    console.log(item.length);
+    for(i=0;i<item.length;i++){
+        console.log(item);
+        delarr[i]=item[i].id;
+    }
+    return db.query("delete from task where id in (?)",[delarr],callback)
 }
 
 };
